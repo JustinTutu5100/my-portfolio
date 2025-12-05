@@ -1,0 +1,9 @@
+[
+  {
+    "title": "LifeLink",
+    "description": "LifeLink is a real-time platform that links hospitals to the nearest compatible donors.Smart matching and instant alerts eliminate delays in critical blood requests.\nOur mission: ensure no patient dies due to preventable shortages.",
+    "demo": "https://lifelink-gules.vercel.app/",
+    "github": "https://github.com/AyubFoks/lifelink.git",
+    "image": "assets/LifeLink-Logo.svg"
+  }
+]
