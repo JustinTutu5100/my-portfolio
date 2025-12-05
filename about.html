@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>My Toolkit - Full-Stack Developer</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      height: 2rem;
+      background: rgba(148, 163, 184, 0.2);
+      border-radius: 0.5rem;
+      transition: transform 0.2s;
+    }
+    .skill-item:hover {
+      transform: translateY(-2px);
+    }
+    .skill-item p {
+      font-size: 0.875rem;
+      color: #1e293b;
+    }
+    .dark .skill-item p {
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+  <div class="flex min-h-screen w-full flex-col">
+    <!-- Unified Fixed Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+      <div class="container mx-auto flex items-center p-4">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+          <h2 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Justin Tutu</h2>
+        </div>
+
+        <nav class="ml-auto hidden md:flex items-center gap-6">
+          <a href="index.html" class="text-zinc-600 dark:text-zinc-400 text-sm font-medium hover:text-primary transition-colors">Home</a>
+          <a href="about.html" class="text-primary text-sm font-bold">About</a>
+          <a href="projects.html" class="text-zinc-600 dark:text-zinc-400 text-sm font-medium hover:text-primary transition-colors">Projects</a>
+          <a href="contacts.html" class="text-zinc-600 dark:text-zinc-400 text-sm font-medium hover:text-primary transition-colors">Contact</a>
+        </nav>
+
+        <button class="ml-auto md:hidden text-slate-800 dark:text-white">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-12 md:py-24 pt-28">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- About / Intro Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+          <!-- Photo -->
+          <div class="flex justify-center md:justify-start">
+            <img src="assets/tutu.jpg"
+              alt="Justin Tutu Profile"
+     class="w-58 h-58  rounded-xl border-4 hover:scale-105 transition-transform" />
+
+          </div>
+
+          <!-- Intro Text -->
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
+              Hey, I'm Justin 👋
+            </h1>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              A passionate junior developer from Kenya, turning ideas into real digital solutions.
+              I’m currently growing my skills in full-stack development and building apps that solve
+              real community problems — like faster hiring for home service workers.
+            </p>
+
+            <p class="mt-3 text-slate-600 dark:text-slate-400">
+              I enjoy learning by building: clean UI, smooth functionality, and products that help people.
+            </p>
+
+            <!-- Badges -->
+            <div class="mt-6 flex gap-4 text-sm text-white">
+              <span class="px-4 py-2 bg-primary rounded-lg shadow-sm">Web Developer</span>
+              <span class="px-4 py-2 bg-slate-700 dark:bg-slate-800 rounded-lg shadow-sm">Problem Solver</span>
+            </div>
+
+            <!-- Dynamic Current Status -->
+<div class="mt-4">
+  <!-- Status as button (original size) -->
+  <button id="current-status-btn" 
+          class="bg-primary text-white px-3 py-1 rounded-md text-sm hover:bg-blue-700 transition">
+    🚀 Currently building: Home Services Marketplace App
+  </button>
+
+  <!-- Hidden form (smaller size) -->
+  <form id="status-form" class="mt-2 hidden flex gap-2 items-center">
+    <input 
+      type="text" 
+      id="status-input" 
+      class="w-72 p-2 text-sm border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary dark:bg-slate-800 dark:text-white" 
+    />
+    <button type="submit" class="px-3 py-1 bg-green-500 text-white rounded-md text-sm hover:bg-green-600 transition">Save</button>
+    <button type="button" id="cancel-btn" class="px-3 py-1 bg-red-500 text-white rounded-md text-sm hover:bg-red-600 transition">Cancel</button>
+  </form>
+</div>
+        </section>
+
+        <!-- Fun Stats Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
+          <div class="p-6 rounded-xl bg-slate-100/60 dark:bg-white/5 text-center hover:scale-105 transition">
+            <h2 class="text-3xl font-bold text-primary">200+</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Hours of Coding Practice</p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-100/60 dark:bg-white/5 text-center hover:scale-105 transition">
+            <h2 class="text-3xl font-bold text-primary">5+</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Front-End Projects Completed</p>
+          </div>
+          <div class="p-6 rounded-xl bg-slate-100/60 dark:bg-white/5 text-center hover:scale-105 transition">
+            <h2 class="text-3xl font-bold text-primary">3+</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Back-End Projects Completed</p>
+          </div>
+        </section>
+
+        <!-- Header: Toolkit -->
+        <header class="mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">My Toolkit</h2>
+          <p class="mt-3 text-lg text-slate-600 dark:text-slate-400">
+            Technologies I use to build modern, efficient, and scalable web apps.
+          </p>
+        </header>
+
+        <!-- Skills Grid -->
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Front-End -->
+          <div class="rounded-xl bg-slate-100/50 p-6 dark:bg-white/5">
+            <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">Front-End</h3>
+            <div class="flex flex-wrap gap-2">
+              <div class="skill-item"><p>JavaScript</p></div>
+              <div class="skill-item"><p>React</p></div>
+              <div class="skill-item"><p>HTML</p></div>
+              <div class="skill-item"><p>CSS</p></div>
+            </div>
+          </div>
+
+          <!-- Back-End -->
+          <div class="rounded-xl bg-slate-100/50 p-6 dark:bg-white/5">
+            <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">Back-End</h3>
+            <div class="flex flex-wrap gap-2">
+              <div class="skill-item"><p>Node.js</p></div>
+              <div class="skill-item"><p>Python</p></div>
+              <div class="skill-item"><p>JavaScript</p></div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="rounded-xl bg-slate-100/50 p-6 dark:bg-white/5">
+            <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">Databases</h3>
+            <div class="flex flex-wrap gap-2">
+              <div class="skill-item"><p>PostgreSQL</p></div>
+            </div>
+          </div>
+
+          <!-- DevOps -->
+          <div class="rounded-xl bg-slate-100/50 p-6 dark:bg-white/5">
+            <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">DevOps & Infra</h3>
+            <div class="flex flex-wrap gap-2">
+              <div class="skill-item"><p>Git</p></div>
+              <div class="skill-item"><p>Vercel</p></div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="rounded-xl bg-slate-100/50 p-6 dark:bg-white/5">
+            <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">Testing & Tools</h3>
+            <div class="flex flex-wrap gap-2">
+              <div class="skill-item"><p>Canvas</p></div>
+              <div class="skill-item"><p>Webpack</p></div>
+              <div class="skill-item"><p>Figma</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (unchanged) -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-700">
+      <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-600 dark:text-gray-400">&copy; 2025 Justin Tutu. All rights reserved.</p>
+        <div class="flex gap-4">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/25475893305" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 hover:bg-green-600 transition-colors text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.04 2C6.48 2 2 6.48 2 12c0 2.12.55 4.1 1.5 5.84L2 22l4.36-1.48A9.935 9.935 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.15 14.58c-.24.68-1.39 1.28-1.93 1.37-.5.09-1.12.13-2.42-.65-2.29-1.29-3.75-3.51-3.86-3.66-.11-.15-.92-1.21-.92-2.31 0-1.1.57-1.64.77-1.86.2-.22.44-.28.59-.28.15 0 .31 0 .44.01.14.01.41-.15.64.12.23.27.77.92.83 1 .06.09.09.2.02.32-.07.11-.11.18-.22.29-.11.11-.24.28-.34.38-.11.1-.22.22-.1.44.12.22.53.87 1.14 1.41.79.72 1.47.93 1.69 1.03.22.1.35.09.48-.05.12-.14.5-.57.63-.77.13-.2.27-.16.44-.1.17.06 1.09.51 1.28.61.19.1.31.15.36.24.05.09.05.51-.19 1.19z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/cryptiic_tutu" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-pink-500 hover:bg-pink-600 transition-colors text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 2a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+            </svg>
+          </a>
+
+          <!-- Twitter -->
+          <a href="https://twitter.com/cryptiictutu" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 transition-colors text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.46 6c-.77.34-1.6.57-2.46.68a4.3 4.3 0 001.88-2.37 8.57 8.57 0 01-2.72 1.03 4.28 4.28 0 00-7.3 3.9 12.15 12.15 0 01-8.82-4.47 4.28 4.28 0 001.33 5.7 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.2 4.28 4.28 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.57 8.57 0 012 19.54a12.08 12.08 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.38-.01-.57A8.68 8.68 0 0024 5.64a8.44 8.44 0 01-2.54.7z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Dynamic Status Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const statusBtn = document.getElementById("current-status-btn");
+    const statusForm = document.getElementById("status-form");
+    const statusInput = document.getElementById("status-input");
+    const cancelBtn = document.getElementById("cancel-btn");
+
+    // Show form when status button is clicked
+    statusBtn.addEventListener("click", () => {
+      statusInput.value = statusBtn.textContent;
+      statusForm.classList.remove("hidden");
+      statusBtn.classList.add("hidden"); // hide the button
+      statusInput.focus();
+    });
+
+    // Save new status
+    statusForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      statusBtn.textContent = statusInput.value;
+      statusForm.classList.add("hidden");
+      statusBtn.classList.remove("hidden");
+    });
+
+    // Cancel editing
+    cancelBtn.addEventListener("click", () => {
+      statusForm.classList.add("hidden");
+      statusBtn.classList.remove("hidden");
+    });
+  });
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Full-Stack Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Unified Fixed Navbar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200/50 dark:border-white/10">
+        <div class="container mx-auto flex items-center p-4">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+                <h2 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Justin Tutu</h2>
+            </div>
+
+            <nav class="ml-auto hidden md:flex items-center gap-6">
+                <a href="index.html" class="text-primary text-sm font-bold">Home</a>
+                <a href="about.html" class="text-zinc-600 dark:text-zinc-400 text-sm font-medium hover:text-primary transition-colors">About</a>
+                <a href="projects.html" class="text-zinc-600 dark:text-zinc-400 text-sm font-medium hover:text-primary transition-colors">Projects</a>
+                <a href="contacts.html" class="text-zinc-600 dark:text-zinc-400 text-sm font-medium hover:text-primary transition-colors">Contact</a>
+            </nav>
+
+            <button class="ml-auto md:hidden text-slate-800 dark:text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+</header>
+<main class="flex-grow pt-20">
+<!-- Hero Section -->
+<section class="container mx-auto px-4 py-16 sm:py-24 lg:py-32">
+<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+<div class="order-2 flex flex-col gap-6 lg:order-1 lg:gap-8">
+<div class="flex flex-col gap-2 text-left">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Full-Stack Developer &amp; Problem Solver</h1>
+      <p class="mt-3 text-lg text-slate-600 dark:text-slate-400">Passionate about building scalable backend systems and intuitive user experiences. With 5+ years of experience, I turn complex challenges into elegant, efficient solutions.</p>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap gap-2">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-[#232f48] px-3">
+<p class="text-sm font-medium text-inherit dark:text-white">React</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-[#232f48] px-3">
+<p class="text-sm font-medium text-inherit dark:text-white">JavaScript</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-[#232f48] px-3">
+<p class="text-sm font-medium text-inherit dark:text-white">HTML</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-[#232f48] px-3">
+<p class="text-sm font-medium text-inherit dark:text-white">Python</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+                        <a href="projects.html" class="flex h-12 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold leading-normal tracking-[0.015em] text-white">
+                            <span class="truncate">View My Work</span>
+                        </a>
+                        <a href="contacts.html" class="flex h-12 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gray-200 dark:bg-[#232f48] px-5 text-base font-bold leading-normal tracking-[0.015em] text-inherit dark:text-white">
+                            <span class="truncate">Get In Touch</span>
+                        </a>
+</div>
+</div>
+<div class="order-1 w-full lg:order-2">
+<div class="w-full max-w-md mx-auto lg:max-w-none rounded-xl overflow-hidden">
+  <img 
+    src="assets/tutu.jpg" 
+    alt="Professional headshot of a developer smiling warmly" 
+    style="width: 100%; height: 700px; object-fit: cover;"
+  >
+</div>
+
+
+</div>
+</div>
+</section>
+<!-- Feature Section -->
+<section class="bg-gray-100 dark:bg-black/20 py-16 sm:py-24">
+<div class="container mx-auto flex flex-col gap-10 px-4">
+<div class="flex flex-col gap-4 text-center">
+<h2 class="text-3xl font-bold leading-tight tracking-tight dark:text-white text-inherit sm:text-4xl">
+                            What I Do
+                        </h2>
+<p class="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                            I specialize in creating robust web applications from front to back, focusing on performance, scalability, and user experience.
+                        </p>
+</div>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200/50 dark:border-white/10 bg-background-light dark:bg-[#192233] p-6">
+<span class="material-symbols-outlined text-primary text-3xl">
+                                code_blocks
+                            </span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-inherit dark:text-white">Frontend Development</h3>
+<p class="text-sm text-gray-600 dark:text-[#92a4c9]">Building responsive and dynamic user interfaces with modern frameworks like React and Flask </p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200/50 dark:border-white/10 bg-background-light dark:bg-[#192233] p-6">
+<span class="material-symbols-outlined text-primary text-3xl">
+                                database
+                            </span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-inherit dark:text-white">Backend Architecture</h3>
+<p class="text-sm text-gray-600 dark:text-[#92a4c9]">Designing and implementing scalable server-side logic and APIs using Node.js and Python.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-gray-200/50 dark:border-white/10 bg-background-light dark:bg-[#192233] p-6">
+<span class="material-symbols-outlined text-primary text-3xl">
+                                cloud_upload
+                            </span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-inherit dark:text-white">Cloud &amp; DevOps</h3>
+<p class="text-sm text-gray-600 dark:text-[#92a4c9]">
+                                  Deploying and managing web applications on platforms like Vercel for fast, scalable, and highly available deployments.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="container mx-auto px-4 py-16 sm:py-24 lg:py-32">
+<div class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-6 text-center">
+<h2 class="text-3xl font-bold leading-tight tracking-tight dark:text-white text-inherit sm:text-4xl">
+                        Let's Build Something Together
+                    </h2>
+<p class="text-base text-gray-600 dark:text-gray-300">Have a project in mind or just want to connect? I'd love to hear from you.</p>
+<a href="contacts.html" class="flex h-12 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold leading-normal tracking-[0.015em] text-white">
+<span class="truncate">Contact Me</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Unified Footer -->
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-700">
+  <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    
+    <!-- Copyright -->
+    <p class="text-sm text-gray-600 dark:text-gray-400">&copy; 2025 Justin Tutu. All rights reserved.</p>
+    
+    <!-- Social Links -->
+    <div class="flex gap-4">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/25475893305" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 hover:bg-green-600 transition-colors text-white">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12.04 2C6.48 2 2 6.48 2 12c0 2.12.55 4.1 1.5 5.84L2 22l4.36-1.48A9.935 9.935 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.15 14.58c-.24.68-1.39 1.28-1.93 1.37-.5.09-1.12.13-2.42-.65-2.29-1.29-3.75-3.51-3.86-3.66-.11-.15-.92-1.21-.92-2.31 0-1.1.57-1.64.77-1.86.2-.22.44-.28.59-.28.15 0 .31 0 .44.01.14.01.41-.15.64.12.23.27.77.92.83 1 .06.09.09.2.02.32-.07.11-.11.18-.22.29-.11.11-.24.28-.34.38-.11.1-.22.22-.1.44.12.22.53.87 1.14 1.41.79.72 1.47.93 1.69 1.03.22.1.35.09.48-.05.12-.14.5-.57.63-.77.13-.2.27-.16.44-.1.17.06 1.09.51 1.28.61.19.1.31.15.36.24.05.09.05.51-.19 1.19z"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/cryptiic_tutu" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-pink-500 hover:bg-pink-600 transition-colors text-white">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 2a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+        </svg>
+      </a>
+
+      <!-- Twitter -->
+      <a href="https://twitter.com/cryptiictutu" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 transition-colors text-white">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22.46 6c-.77.34-1.6.57-2.46.68a4.3 4.3 0 001.88-2.37 8.57 8.57 0 01-2.72 1.03 4.28 4.28 0 00-7.3 3.9 12.15 12.15 0 01-8.82-4.47 4.28 4.28 0 001.33 5.7 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.2 4.28 4.28 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.57 8.57 0 012 19.54a12.08 12.08 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.38-.01-.57A8.68 8.68 0 0024 5.64a8.44 8.44 0 01-2.54.7z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</div>
+</body></html>
